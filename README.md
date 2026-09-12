@@ -1,0 +1,140 @@
+<p align="center">
+  <img src="mobile/assets/brand/gymflow-wordmark-color.svg" alt="GymFlow" width="320" />
+</p>
+
+<p align="center">
+  Plataforma móvil para gestionar centros deportivos, conectar a su equipo y facilitar la experiencia de sus clientes.
+</p>
+
+<p align="center">
+  <img alt="React Native" src="https://img.shields.io/badge/React_Native-0.81-20232A?logo=react" />
+  <img alt="Expo" src="https://img.shields.io/badge/Expo-54-000020?logo=expo" />
+  <img alt="Spring Boot" src="https://img.shields.io/badge/Spring_Boot-4.1-6DB33F?logo=springboot&logoColor=white" />
+  <img alt="Java" src="https://img.shields.io/badge/Java-17-ED8B00?logo=openjdk&logoColor=white" />
+  <img alt="MySQL" src="https://img.shields.io/badge/MySQL-9-4479A1?logo=mysql&logoColor=white" />
+</p>
+
+## El proyecto
+
+GymFlow es un proyecto full stack orientado a la gestión diaria de un gimnasio. Reúne en una sola aplicación la programación de clases, reservas, rutinas, pagos, comunicación, altas de usuarios y personalización del centro.
+
+La interfaz ofrece experiencias diferenciadas para **administradores**, **entrenadores** y **clientes**, mientras que el backend aplica permisos y aislamiento de datos por gimnasio.
+
+> Estado: primera versión funcional completada y en pausa planificada. Es un proyecto de porfolio, no un servicio desplegado en producción.
+
+## Vistas principales
+
+<p align="center">
+  <img src="docs/screenshots/admin-dashboard.jpg" alt="Panel del administrador" width="29%" />
+  <img src="docs/screenshots/trainer-dashboard.jpg" alt="Panel del entrenador" width="29%" />
+  <img src="docs/screenshots/client-dashboard.jpg" alt="Panel del cliente" width="29%" />
+</p>
+
+<p align="center">
+  <em>Previsualizaciones neutrales con datos de ejemplo para cada rol.</em>
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/admin-management.jpg" alt="Gestión centralizada del gimnasio" width="34%" />
+</p>
+
+<p align="center">
+  <em>Acceso administrativo organizado por áreas y métricas relevantes.</em>
+</p>
+
+## Funcionalidades destacadas
+
+- Programación semanal de clases y materialización de sesiones con identificadores estables.
+- Reservas con control de capacidad y protección ante solicitudes concurrentes por la última plaza.
+- Rutinas, asignaciones, ejercicios multimedia y calculadora de repetición máxima (1RM).
+- Pagos persistentes con estados pendiente, pagado, cancelado y vencido calculado.
+- Mensajes, comunicados y automatizaciones dirigidas por audiencia.
+- Alta manual de clientes y entrenadores, además de invitaciones de clientes mediante enlace o QR.
+- Fotografías desde cámara o galería y sistema de archivos con validación de tipo y firma binaria.
+- Identidad visual configurable y previsualizaciones neutrales de los tres roles.
+
+## Arquitectura
+
+```mermaid
+flowchart LR
+    A[App móvil\nExpo + React Native] -->|REST + Bearer token| B[API\nSpring Boot]
+    B --> C[Servicios de dominio\ny autorización]
+    C --> D[(MySQL)]
+    C --> E[Archivos gestionados]
+    F[Planificadores] --> C
+    F --> G[Clases recurrentes\ny mensajes automáticos]
+```
+
+La identidad del usuario y su gimnasio se obtienen siempre de la sesión. Los servicios vuelven a validar rol, pertenencia y estado antes de consultar o modificar información.
+
+Más información en [Arquitectura](docs/architecture.md), [API](docs/api.md) y [Decisiones técnicas](docs/technical-decisions.md).
+
+## Tecnologías
+
+| Área | Tecnologías |
+| --- | --- |
+| Aplicación | React Native, Expo Router, TypeScript |
+| Backend | Java 17, Spring Boot, Spring MVC, Spring Data JPA |
+| Datos | MySQL, H2 para pruebas |
+| Seguridad | BCrypt, tokens HMAC, autorización por rol y gimnasio |
+| Calidad | JUnit, Mockito, Node Test Runner, ESLint, TypeScript |
+
+## Calidad y seguridad
+
+- Suite backend con **158 pruebas automatizadas** tras la preparación pública.
+- Pruebas específicas de autorización, aislamiento entre gimnasios, concurrencia y tareas programadas.
+- Pruebas unitarias de calendario y cálculo 1RM en la aplicación.
+- Contraseñas almacenadas únicamente como hash BCrypt.
+- Secretos y direcciones del entorno fuera del código fuente.
+- Subidas temporales, asociación controlada y limpieza automática de archivos abandonados.
+- Validación continua mediante GitHub Actions.
+
+## Ejecución local
+
+### Requisitos
+
+- Node.js 22 y npm.
+- JDK 17.
+- MySQL 8 o superior.
+
+### Backend
+
+Consulta [backend/README.md](backend/README.md) para crear la base de datos y configurar las variables necesarias.
+
+```bash
+cd backend
+./mvnw spring-boot:run
+```
+
+### Aplicación
+
+Consulta [mobile/README.md](mobile/README.md) para configurar la URL de la API.
+
+```bash
+cd mobile
+npm ci
+npm start
+```
+
+## Estructura
+
+```text
+gymflow/
+├── mobile/       # Aplicación Expo / React Native
+├── backend/      # API REST Spring Boot
+├── docs/         # Arquitectura, API y decisiones técnicas
+└── .github/      # Validación continua
+```
+
+## Próximos pasos
+
+- Preparar datos de demostración reproducibles.
+- Incorporar migraciones versionadas de base de datos.
+- Sustituir el almacenamiento local de archivos por un servicio de objetos.
+- Añadir observabilidad y límites de peticiones para un despliegue real.
+
+## Autora
+
+Desarrollado por **Julia Cuevas**.
+
+El código se publica con fines de evaluación profesional. Consulta [LICENSE](LICENSE) antes de reutilizarlo.

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 240">
+  <defs>
+    <linearGradient id="wordmark-gradient" x1="515" y1="55" x2="1030" y2="190" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4F7DFF"/>
+      <stop offset="1" stop-color="#6A5CFF"/>
+    </linearGradient>
+  </defs>
+  <text x="36" y="176" font-family="Inter, Arial, sans-serif" font-size="148" font-weight="800" letter-spacing="5"><tspan fill="#1F2A44">GYM</tspan><tspan fill="url(#wordmark-gradient)">FLOW</tspan></text>
+</svg>

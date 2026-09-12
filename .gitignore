@@ -1,0 +1,28 @@
+# Dependencies and build output
+mobile/node_modules/
+mobile/.expo/
+mobile/dist/
+mobile/web-build/
+backend/target/
+
+# Local configuration and data
+.env
+.env.*
+!.env.example
+backend/src/main/resources/application.properties
+backend/uploads/
+
+# Logs and editor metadata
+*.log
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Credentials and signing material
+*.pem
+*.key
+*.p8
+*.p12
+*.jks
+*.mobileprovision
