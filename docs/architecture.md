@@ -26,6 +26,7 @@ sequenceDiagram
 - **Expo Router** gestiona las rutas de acceso, invitación y aplicación autenticada.
 - Una sesión central conserva el token en almacenamiento seguro y coordina la expiración ante respuestas `401`.
 - Los paneles comparten un sistema de diseño, pero su navegación y acciones dependen del rol.
+- Las pantallas y controles visuales se organizan por dominio y rol dentro de `src/components`; la ruta autenticada coordina el estado y las operaciones sin duplicar sus interfaces.
 - Las operaciones sensibles bloquean pulsaciones duplicadas mediante referencias síncronas.
 - Los errores de red conservan los últimos datos válidos y ofrecen reintento; no se presentan como listas vacías.
 

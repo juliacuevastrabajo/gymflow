@@ -9,9 +9,10 @@
     "web": "expo start --web",
     "lint": "expo lint",
     "typecheck": "tsc --noEmit",
-    "test": "npm run test:calendar && npm run test:one-rep-max",
+    "test": "npm run test:calendar && npm run test:dates && npm run test:one-rep-max",
     "check": "npm run test && npm run typecheck && npm run lint",
     "test:calendar": "node --test src/features/classes/classCalendar.test.mjs",
+    "test:dates": "node --test src/features/classes/classDateUtils.test.mjs",
     "test:one-rep-max": "node --test src/features/routines/oneRepMax.test.mjs"
   },
   "dependencies": {
