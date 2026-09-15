@@ -6,6 +6,14 @@
   Plataforma full stack para gestionar centros deportivos, coordinar al equipo y ofrecer una experiencia móvil cuidada a sus clientes.
 </p>
 
+## Sobre el desarrollo
+
+GymFlow fue desarrollado como un proyecto de aprendizaje y experimentación utilizando de forma intensiva herramientas de IA generativa durante el proceso de implementación.
+
+La definición del producto, sus funcionalidades, requisitos y decisiones de diseño se realizaron de forma iterativa, utilizando IA como herramienta de apoyo para generar, modificar y revisar parte del código.
+
+Por este motivo, el repositorio representa también una experiencia práctica de desarrollo asistido por IA y no pretende atribuir la autoría manual de la totalidad del código.
+
 <p align="center">
   <img alt="React Native" src="https://img.shields.io/badge/React_Native-0.81-20232A?logo=react" />
   <img alt="Expo" src="https://img.shields.io/badge/Expo-54-000020?logo=expo" />
