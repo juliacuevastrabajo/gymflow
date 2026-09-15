@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  Plataforma móvil para gestionar centros deportivos, conectar a su equipo y facilitar la experiencia de sus clientes.
+  Plataforma full stack para gestionar centros deportivos, coordinar al equipo y ofrecer una experiencia móvil cuidada a sus clientes.
 </p>
 
 <p align="center">
@@ -14,33 +14,39 @@
   <img alt="MySQL" src="https://img.shields.io/badge/MySQL-9-4479A1?logo=mysql&logoColor=white" />
 </p>
 
-## El proyecto
+## El producto
 
-GymFlow es un proyecto full stack orientado a la gestión diaria de un gimnasio. Reúne en una sola aplicación la programación de clases, reservas, rutinas, pagos, comunicación, altas de usuarios y personalización del centro.
+GymFlow centraliza la operativa diaria de un gimnasio: programación de clases, reservas, rutinas, pagos, comunicación, altas de usuarios y personalización del centro.
 
-La interfaz ofrece experiencias diferenciadas para **administradores**, **entrenadores** y **clientes**, mientras que el backend aplica permisos y aislamiento de datos por gimnasio.
+La aplicación adapta navegación, información y acciones a **administradores**, **entrenadores** y **clientes**. Detrás de la interfaz, la API conserva la autoridad sobre la identidad, los permisos y el aislamiento de datos de cada gimnasio.
+
+El resultado es una primera versión funcional que combina diseño de producto móvil, modelado de dominio, persistencia, seguridad y pruebas automatizadas.
 
 > Estado: primera versión funcional completada y en pausa planificada. Es un proyecto de porfolio, no un servicio desplegado en producción.
 
-## Vistas principales
+## Experiencia móvil
 
 <p align="center">
-  <img src="docs/screenshots/admin-dashboard.jpg" alt="Panel del administrador" width="29%" />
-  <img src="docs/screenshots/trainer-dashboard.jpg" alt="Panel del entrenador" width="29%" />
-  <img src="docs/screenshots/client-dashboard.jpg" alt="Panel del cliente" width="29%" />
+  <img src="docs/screenshots/splash-screen.jpg" alt="Pantalla de carga de GymFlow" width="28%" />
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/login-screen.jpg" alt="Inicio de sesión e invitaciones de GymFlow" width="28%" />
 </p>
 
 <p align="center">
-  <em>Previsualizaciones neutrales con datos de ejemplo para cada rol.</em>
+  <em>Identidad de producto, acceso por credenciales y entrada mediante invitación del gimnasio.</em>
 </p>
 
 <p align="center">
-  <img src="docs/screenshots/admin-management.jpg" alt="Gestión centralizada del gimnasio" width="34%" />
+  <img src="docs/screenshots/admin-dashboard.jpg" alt="Vista previa del panel de administración" width="29%" />
+  <img src="docs/screenshots/trainer-dashboard.jpg" alt="Vista previa del panel de entrenador" width="29%" />
+  <img src="docs/screenshots/client-dashboard.jpg" alt="Vista previa del panel de cliente" width="29%" />
 </p>
 
 <p align="center">
-  <em>Acceso administrativo organizado por áreas y métricas relevantes.</em>
+  <em>Tres experiencias coherentes, con navegación y prioridades propias para cada rol.</em>
 </p>
+
+Las capturas utilizan datos de ejemplo y muestran únicamente la entrada y el punto de partida del producto. El resto de flujos se resume a continuación sin convertir el README en un recorrido completo por la aplicación.
 
 ## Funcionalidades destacadas
 
